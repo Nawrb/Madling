@@ -38,7 +38,40 @@ header {
     margin-bottom: 20px;
     transform: rotate(-2deg); /* Légère rotation style comics */
 }
+/* 1. Important : On dit au header d'être le point de repère */
+header {
+    position: relative; /* Indispensable pour que le 'absolute' fonctionne dedans */
+    /* ... tes autres styles header (width, padding, background...) restent ici */
+}
 
+/* 2. Positionnement du bloc d'icônes */
+.social-media-icons {
+    position: absolute; /* Sort du flux normal */
+    top: 20px;          /* À 20px du haut */
+    right: 30px;        /* À 30px de la droite */
+    z-index: 10;        /* S'assure qu'il est au-dessus du reste */
+}
+
+/* 3. Style de l'icône Instagram */
+.social-icon {
+    display: inline-block;
+    color: #e0b0ff; /* Couleur de base (Lilas) */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Effet au survol (Hover) */
+.social-icon:hover {
+    color: #ff69b4; /* Devient rose néon au survol */
+    transform: scale(1.1) rotate(5deg); /* Grossit légèrement et tourne */
+    filter: drop-shadow(0 0 5px #ff69b4); /* Ajoute une lueur */
+}
+
+/* Taille du SVG */
+.social-icon svg {
+    width: 35px;
+    height: 35px;
+}
 /* --- Menu de Navigation --- */
 .main-nav {
     display: flex;
