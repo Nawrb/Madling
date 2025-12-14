@@ -131,10 +131,12 @@ main {
 /* --- Grille Galerie --- */
 .gallery-grid {
     display: grid;
-    /* Grille responsive : s'adapte à la taille de l'écran */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* On change 'auto-fit' par 'auto-fill' pour mieux gérer les vides */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 30px;
-    justify-items: center;
+    
+    /* On aligne tout au centre ou à gauche selon ta préférence */
+    justify-items: center; 
 }
 
 .page-item {
@@ -142,6 +144,10 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    
+    /* --- C'EST ICI QUE ÇA CHANGE --- */
+    max-width: 200px; /* On interdit à l'image de dépasser 200px */
+    /* ------------------------------ */
 }
 
 .img-wrapper {
@@ -171,4 +177,64 @@ main {
     font-family: 'Permanent Marker', cursive;
     font-size: 1.2rem;
     text-transform: uppercase;
+}
+/* --- Barre d'outils Admin --- */
+.admin-toolbar {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #000;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.admin-toolbar h3 {
+    color: #888;
+    font-family: 'Bangers', cursive;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-admin {
+    padding: 10px 20px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transform: rotate(-2deg);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-admin:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 5;
+}
+
+/* Style spécifique bouton Chapitre (Bleu) */
+.btn-chap {
+    background-color: #5dcefa;
+    color: #000;
+    box-shadow: 4px 4px 0 #fff;
+}
+
+/* Style spécifique bouton Page (Rose) */
+.btn-page {
+    background-color: #ff69b4;
+    color: #000;
+    box-shadow: 4px 4px 0 #fff;
+}
+
+.btn-admin:active {
+    box-shadow: 2px 2px 0 #fff;
+    transform: translate(2px, 2px);
 }
