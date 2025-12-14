@@ -26,8 +26,7 @@ header {
     text-align: center;
     padding: 40px 0 20px 0;
     position: relative;
-    /* Correction du background pour la lisibilité */
-    background: radial-gradient(circle at center, rgba(46, 16, 46, 0.9) 0%, rgba(18, 3, 18, 0.95) 70%);
+
 }
 
 /* --- Conteneur du Logo Image --- */
