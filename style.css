@@ -24,8 +24,9 @@ header {
     width: 100%;
     text-align: center;
     padding: 40px 0 20px 0;
-    background: radial-gradient(circle at center, #2e102e 0%, #120312 70%);
+    background: radial-gradient(circle at center, rgba(46, 16, 46, 0.5) 0%, rgba(18, 3, 18, 0.8) 70%);
     position: relative;
+    background-color: rgba(18, 3, 18, 0.8); 
 }
 
 /* --- Conteneur du Logo Image --- */
