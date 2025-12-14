@@ -1,4 +1,4 @@
-/* style.css */
+/* --- Réinitialisation & Body --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,9 +6,9 @@
 }
 
 body {
-    background-color: #120312; /* Fond très sombre (violet/noir) */
+    background-color: #120312;
     color: #fff;
-    font-family: 'Permanent Marker', cursive; /* Police par défaut un peu 'fun' */
+    font-family: 'Permanent Marker', cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,58 +20,65 @@ header {
     width: 100%;
     text-align: center;
     padding: 40px 0 20px 0;
-    /* Dégradé léger en haut pour simuler l'image de fond */
     background: radial-gradient(circle at center, #2e102e 0%, #120312 70%);
+    position: relative;
 }
 
-.main-logo {
-    font-family: 'Bangers', cursive; /* Police impactante pour le logo */
-    font-size: 6rem;
-    color: #ff69b4; /* Rose néon */
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    /* Effet de dégradé sur le texte (simulé en CSS) */
-    background: linear-gradient(180deg, #ff69b4 0%, #5dcefa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+/* --- Conteneur du Logo Image --- */
+.logo-container {
+    width: 100%; 
+    height: auto;
     margin-bottom: 20px;
-    transform: rotate(-2deg); /* Légère rotation style comics */
-}
-/* 1. Important : On dit au header d'être le point de repère */
-header {
-    position: relative; /* Indispensable pour que le 'absolute' fonctionne dedans */
-    /* ... tes autres styles header (width, padding, background...) restent ici */
+    text-align: center; 
 }
 
-/* 2. Positionnement du bloc d'icônes */
+.logo-image {
+
+    width: 500px; 
+    max-width: 80%; 
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+
+    transform: rotate(-2deg); 
+    
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.7)); 
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+
+/* --- Icônes Réseaux Sociaux (Rond Image) --- */
 .social-media-icons {
-    position: absolute; /* Sort du flux normal */
-    top: 20px;          /* À 20px du haut */
-    right: 30px;        /* À 30px de la droite */
-    z-index: 10;        /* S'assure qu'il est au-dessus du reste */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
 }
 
-/* 3. Style de l'icône Instagram */
-.social-icon {
-    display: inline-block;
-    color: #e0b0ff; /* Couleur de base (Lilas) */
+.social-icon-round {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #e0b0ff;
+    overflow: hidden;
     transition: all 0.3s ease;
-    text-decoration: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
-/* Effet au survol (Hover) */
-.social-icon:hover {
-    color: #ff69b4; /* Devient rose néon au survol */
-    transform: scale(1.1) rotate(5deg); /* Grossit légèrement et tourne */
-    filter: drop-shadow(0 0 5px #ff69b4); /* Ajoute une lueur */
+.social-icon-round img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-/* Taille du SVG */
-.social-icon svg {
-    width: 35px;
-    height: 35px;
+.social-icon-round:hover {
+    border-color: #ff69b4;
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 15px #ff69b4;
 }
+
 /* --- Menu de Navigation --- */
 .main-nav {
     display: flex;
@@ -81,7 +88,7 @@ header {
 }
 
 .main-nav a {
-    color: #e0b0ff; /* Lilas */
+    color: #e0b0ff;
     text-decoration: none;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -94,7 +101,7 @@ header {
     text-shadow: 0 0 10px #e0b0ff;
 }
 
-/* --- Conteneur Principal (Boîte violette) --- */
+/* --- Conteneur Principal --- */
 main {
     width: 90%;
     max-width: 1200px;
@@ -102,7 +109,7 @@ main {
 }
 
 .content-box {
-    background-color: #1a051a; /* Violet très foncé */
+    background-color: #1a051a;
     border: 4px solid #000;
     padding: 40px;
     border-radius: 5px;
@@ -113,7 +120,7 @@ main {
 .chapter-header {
     text-align: center;
     margin-bottom: 40px;
-    font-family: 'Creepster', cursive; /* Police style horreur/fantasy */
+    font-family: 'Creepster', cursive;
 }
 
 .chapter-header h2 {
@@ -131,12 +138,9 @@ main {
 /* --- Grille Galerie --- */
 .gallery-grid {
     display: grid;
-    /* On change 'auto-fit' par 'auto-fill' pour mieux gérer les vides */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 30px;
-    
-    /* On aligne tout au centre ou à gauche selon ta préférence */
-    justify-items: center; 
+    justify-items: center;
 }
 
 .page-item {
@@ -144,10 +148,7 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    
-    /* --- C'EST ICI QUE ÇA CHANGE --- */
-    max-width: 200px; /* On interdit à l'image de dépasser 200px */
-    /* ------------------------------ */
+    max-width: 200px;
 }
 
 .img-wrapper {
@@ -167,7 +168,7 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 2/3; /* Format portrait type BD */
+    aspect-ratio: 2/3;
     object-fit: cover;
 }
 
@@ -178,6 +179,7 @@ main {
     font-size: 1.2rem;
     text-transform: uppercase;
 }
+
 /* --- Barre d'outils Admin --- */
 .admin-toolbar {
     width: 100%;
@@ -220,21 +222,19 @@ main {
     z-index: 5;
 }
 
-/* Style spécifique bouton Chapitre (Bleu) */
+.btn-admin:active {
+    box-shadow: 2px 2px 0 #fff;
+    transform: translate(2px, 2px);
+}
+
 .btn-chap {
     background-color: #5dcefa;
     color: #000;
     box-shadow: 4px 4px 0 #fff;
 }
 
-/* Style spécifique bouton Page (Rose) */
 .btn-page {
     background-color: #ff69b4;
     color: #000;
     box-shadow: 4px 4px 0 #fff;
-}
-
-.btn-admin:active {
-    box-shadow: 2px 2px 0 #fff;
-    transform: translate(2px, 2px);
 }
