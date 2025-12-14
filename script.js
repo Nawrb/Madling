@@ -1,5 +1,3 @@
-
-
 // Fonction pour ajouter un nouveau titre de chapitre ET une nouvelle grille
 function ajouterChapitre() {
     const num = prompt("Numéro du chapitre (ex: 13) ?", "XX");
@@ -36,9 +34,15 @@ function ajouterPage() {
     const urlImage = "https://via.placeholder.com/200x300/5dcefa/000?text=NEW";
 
     if (nomPage) {
-        // C'EST ICI QUE ÇA CHANGE :
         // On sélectionne TOUTES les grilles, et on prend la dernière
         const allGrids = document.querySelectorAll('.gallery-grid');
+        
+        // Sécurité : s'il n'y a pas encore de grille, on ne plante pas
+        if (allGrids.length === 0) {
+            alert("Il faut d'abord créer un chapitre !");
+            return;
+        }
+
         const lastGrid = allGrids[allGrids.length - 1];
 
         // Création de la page
@@ -58,4 +62,3 @@ function ajouterPage() {
         newPageItem.scrollIntoView({behavior: "smooth"});
     }
 }
-
