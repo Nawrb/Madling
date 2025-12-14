@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    /* Assure-toi que cette image existe bien dans ton dossier assets */
     background-image: url('assets/Madling_Logo.png'); 
     background-size: cover;
     background-attachment: fixed;
@@ -24,9 +25,9 @@ header {
     width: 100%;
     text-align: center;
     padding: 40px 0 20px 0;
-    background: radial-gradient(circle at center, rgba(46, 16, 46, 0.5) 0%, rgba(18, 3, 18, 0.8) 70%);
     position: relative;
-    background-color: rgba(18, 3, 18, 0.8); 
+    /* Correction du background pour la lisibilité */
+    background: radial-gradient(circle at center, rgba(46, 16, 46, 0.9) 0%, rgba(18, 3, 18, 0.95) 70%);
 }
 
 /* --- Conteneur du Logo Image --- */
@@ -38,19 +39,15 @@ header {
 }
 
 .logo-image {
-
     width: 500px; 
     max-width: 80%; 
     height: auto;
     display: block; 
     margin: 0 auto; 
-
     transform: rotate(-2deg); 
-    
     filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.7)); 
     transition: filter 0.3s ease, transform 0.3s ease;
 }
-
 
 /* --- Icônes Réseaux Sociaux (Rond Image) --- */
 .social-media-icons {
@@ -90,6 +87,7 @@ header {
     justify-content: center;
     gap: 30px;
     margin-bottom: 30px;
+    flex-wrap: wrap; /* Pour le mobile */
 }
 
 .main-nav a {
