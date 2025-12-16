@@ -257,7 +257,7 @@ main {
   --card-bg: rgba(15, 10, 20, 0.9);  /* encadré semi-transparent */
   --text-color: #ffffff;          /* texte principal blanc */
   --text-muted: #a0c4ff;          /* texte secondaire bleu clair */
-  --accent: ##e0b0ff;              /* rose clair pour titres et liens */
+  --accent: #e0b0ff;              /* rose clair pour titres et liens */
   --highlight: #77d9ff;           /* bleu néon pour accents / hovers */
   --max-width: 900px;
   --radius: 12px;
