@@ -276,7 +276,12 @@ main {
 #about section {
   max-width: var(--max-width);
   margin: 0 auto;
+  background-color: var(--card-bg);
   padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px rgba(255, 119, 255, 0.3); /* glow rose léger */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 #about section:hover {
