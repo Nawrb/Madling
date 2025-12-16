@@ -257,7 +257,7 @@ main {
   --card-bg: rgba(15, 10, 20, 0.9);  /* encadré semi-transparent */
   --text-color: #ffffff;          /* texte principal blanc */
   --text-muted: #a0c4ff;          /* texte secondaire bleu clair */
-  --accent: #ff77ff;              /* rose néon pour titres et liens */
+  --accent: ##e0b0ff;              /* rose clair pour titres et liens */
   --highlight: #77d9ff;           /* bleu néon pour accents / hovers */
   --max-width: 900px;
   --radius: 12px;
@@ -276,11 +276,7 @@ main {
 #about section {
   max-width: var(--max-width);
   margin: 0 auto;
-  background-color: var(--card-bg);
   padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: 0 0 20px rgba(255, 119, 255, 0.3); /* glow rose léger */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #about section:hover {
