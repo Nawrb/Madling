@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     background-image: 
         linear-gradient(rgba(18, 3, 18, 0.7), rgba(18, 3, 18, 0.7)),
-        url('assets/Madling_Logo.png'); 
+        url('assets/boss.png'); 
 
     background-size: cover;     
     background-position: center;
