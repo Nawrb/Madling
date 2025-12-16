@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madling - Webcomic</title>
+    <link rel="stylesheet" href="../../style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Creepster&family=Permanent+Marker&family=Bangers&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <div class="social-media-icons">
+            <a class="social-icon-round" href="https://junkred.carrd.co/" target="_blank">
+                <img src="assets/images/logo-cards.png" alt="Carrd">
+            </a>
+        </div>
+
+        <div class="logo-container">
+            <img src="assets/images/Madling_Logo.png" alt="Logo MADLING" class="logo-image">
+        </div>
+
+        <nav class="main-nav">
+            <a href="#">About</a>
+            <a href="#">Archive</a>
+            <a href="#">Characters</a>
+            <a href="#">Extras</a>
+            <a href="#">Links</a>
+        </nav>
+    </header>
+
+  
+  <main id="about">
+    <section class="about-intro">
+      <h1>À propos du webcomic</h1>
+      <p>
+        Bienvenue sur <strong>NomDuWebcomic</strong>, un webcomic original mêlant
+        narration, émotions et illustrations.
+        Cette histoire est publiée épisode par épisode et évolue au fil du temps.
+      </p>
+    </section>
+  
+    <section class="about-story">
+      <h2>L’histoire</h2>
+      <p>
+        Le webcomic raconte l’histoire de personnages confrontés à des choix,
+        des conflits et un univers en constante évolution.
+        Chaque chapitre apporte une nouvelle pièce au puzzle.
+      </p>
+    </section>
+  
+    <section class="about-author">
+      <h2>L’auteur</h2>
+      <p>
+        Je suis <strong>Nom de l’auteur</strong>, passionné de dessin et de narration.
+        Ce webcomic est un projet personnel né de l’envie de raconter une histoire
+        à mon rythme, sans contraintes.
+      </p>
+    </section>
+  
+    <section class="about-format">
+      <h2>Format & publication</h2>
+      <ul>
+        <li>📅 Mises à jour : hebdomadaires / mensuelles</li>
+        <li>🎨 Dessins originaux</li>
+        <li>📱 Lecture optimisée mobile et desktop</li>
+      </ul>
+    </section>
+  
+    <section class="about-contact">
+      <h2>Me contacter</h2>
+      <p>
+        Une question, un retour ou simplement envie de discuter ?
+        Vous pouvez me contacter via :
+      </p>
+      <ul>
+        <li>Email : contact@exemple.com</li>
+        <li>Instagram / Twitter : @exemple</li>
+      </ul>
+    </section>
+</main>
+
+
+    <div class="admin-toolbar">
+        <h3>Zone Créateur</h3>
+        <div class="button-group">
+            <button onclick="ajouterChapitre()" class="btn-admin btn-chap">
+                + Nouveau Chapitre
+            </button>
+            
+            <button onclick="ajouterPage()" class="btn-admin btn-page">
+                + Nouvelle Page
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
