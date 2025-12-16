@@ -246,3 +246,135 @@ main {
     color: #000;
     box-shadow: 4px 4px 0 #fff;
 }
+
+
+
+
+
+
+/* =========================
+   Variables globales
+========================= */
+:root {
+  --bg-color: #0f0f14;
+  --card-bg: #1a1a22;
+  --text-color: #eaeaf0;
+  --text-muted: #b3b3c6;
+  --accent: #8b5cf6;
+
+  --max-width: 900px;
+  --radius: 12px;
+}
+
+/* =========================
+   Main
+========================= */
+#about {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* =========================
+   Sections
+========================= */
+#about section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#about section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   Titres
+========================= */
+#about h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+#about h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
+}
+
+/* =========================
+   Texte
+========================= */
+#about p {
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+#about strong {
+  color: var(--text-color);
+}
+
+/* =========================
+   Listes
+========================= */
+#about ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+#about li {
+  padding: 0.5rem 0;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* =========================
+   Liens
+========================= */
+#about a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#about a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 600px) {
+  #about {
+    padding: 2.5rem 1rem;
+  }
+
+  #about section {
+    padding: 1.5rem;
+  }
+
+  #about h1 {
+    font-size: 2rem;
+  }
+
+  #about h2 {
+    font-size: 1.4rem;
+  }
+}
+
