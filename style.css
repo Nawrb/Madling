@@ -253,11 +253,12 @@ main {
 
 
 :root {
-  --bg-color: #0d0a12;        /* fond principal sombre */
-  --card-bg: rgba(24, 15, 38, 0.95);  /* encadré semi-transparent */
-  --text-color: #e0d9ff;      /* texte clair */
-  --text-muted: #b8aaff;      /* texte secondaire */
-  --accent: #ff7fff;          /* couleur des liens et accents */
+  --bg-color: #0b0b10;           /* fond très sombre */
+  --card-bg: rgba(15, 10, 20, 0.9);  /* encadré semi-transparent */
+  --text-color: #ffffff;          /* texte principal blanc */
+  --text-muted: #a0c4ff;          /* texte secondaire bleu clair */
+  --accent: #ff77ff;              /* rose néon pour titres et liens */
+  --highlight: #77d9ff;           /* bleu néon pour accents / hovers */
   --max-width: 900px;
   --radius: 12px;
 }
@@ -278,25 +279,27 @@ main {
   background-color: var(--card-bg);
   padding: 2rem;
   border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 20px rgba(255, 119, 255, 0.3); /* glow rose léger */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #about section:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 40px rgba(255, 119, 255, 0.5); /* glow plus intense au hover */
 }
 
 #about h1 {
   font-size: 2.4rem;
   margin-bottom: 1rem;
-  color: #d47fff; /* violet fluo proche menu/logo */
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent), 0 0 16px var(--highlight);
 }
 
 #about h2 {
   font-size: 1.6rem;
   margin-bottom: 0.75rem;
-  color: #d47fff; /* même violet fluo */
+  color: var(--accent);
+  text-shadow: 0 0 6px var(--accent), 0 0 12px var(--highlight);
 }
 
 #about p {
@@ -330,6 +333,7 @@ main {
 }
 
 #about a:hover {
+  color: var(--highlight);
   text-decoration: underline;
 }
 
