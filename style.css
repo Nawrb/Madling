@@ -252,44 +252,32 @@ main {
 
 
 
-/* =========================
-   Variables globales
-========================= */
 :root {
-  --bg-color: #0f0f14;
-  --card-bg: #1a1a22;
-  --text-color: #eaeaf0;
-  --text-muted: #b3b3c6;
-  --accent: #8b5cf6;
-
+  --bg-color: #0d0a12;        /* fond principal sombre */
+  --card-bg: rgba(24, 15, 38, 0.95);  /* encadré semi-transparent */
+  --text-color: #e0d9ff;      /* texte clair */
+  --text-muted: #b8aaff;      /* texte secondaire */
+  --accent: #ff7fff;          /* couleur des liens et accents */
   --max-width: 900px;
   --radius: 12px;
 }
 
-/* =========================
-   Main
-========================= */
 #about {
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
   padding: 4rem 1.5rem;
-
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-/* =========================
-   Sections
-========================= */
 #about section {
   max-width: var(--max-width);
   margin: 0 auto;
   background-color: var(--card-bg);
   padding: 2rem;
   border-radius: var(--radius);
-
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -299,24 +287,18 @@ main {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   Titres
-========================= */
 #about h1 {
   font-size: 2.4rem;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: #d47fff; /* violet fluo proche menu/logo */
 }
 
 #about h2 {
   font-size: 1.6rem;
   margin-bottom: 0.75rem;
-  color: var(--accent);
+  color: #d47fff; /* même violet fluo */
 }
 
-/* =========================
-   Texte
-========================= */
 #about p {
   line-height: 1.7;
   color: var(--text-muted);
@@ -327,9 +309,6 @@ main {
   color: var(--text-color);
 }
 
-/* =========================
-   Listes
-========================= */
 #about ul {
   list-style: none;
   padding-left: 0;
@@ -344,9 +323,6 @@ main {
   gap: 0.5rem;
 }
 
-/* =========================
-   Liens
-========================= */
 #about a {
   color: var(--accent);
   text-decoration: none;
@@ -357,9 +333,6 @@ main {
   text-decoration: underline;
 }
 
-/* =========================
-   Responsive
-========================= */
 @media (max-width: 600px) {
   #about {
     padding: 2.5rem 1rem;
@@ -377,4 +350,5 @@ main {
     font-size: 1.4rem;
   }
 }
+
 
