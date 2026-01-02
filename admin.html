@@ -54,32 +54,33 @@
             </div>
                 </section>
 
-            <div class="admin-container">
+            
                 <section class="card page-card">
-                    <h2><span class="icon">🎨</span> Nouvelle Planche</h2>
-                    <form action="/ajouter-page" method="POST" enctype="multipart/form-data">
+                    <div class="admin-container">
+                        <h2><span class="icon">🎨</span> Nouvelle Planche</h2>
+                        <form action="/ajouter-page" method="POST" enctype="multipart/form-data">
                         
-                        <div class="form-group">
-                            <label for="chapterSelect">Choisir le Chapitre</label>
-                            <select id="chapterSelect" name="chapterId" required>
-                                <option value="" disabled selected>-- Sélectionner --</option>
-                                <option value="1">Chapitre 1</option>
-                                <option value="2">Chapitre 2</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="chapterSelect">Choisir le Chapitre</label>
+                                <select id="chapterSelect" name="chapterId" required>
+                                    <option value="" disabled selected>-- Sélectionner --</option>
+                                    <option value="1">Chapitre 1</option>
+                                    <option value="2">Chapitre 2</option>
+                                </select>
+                            </div>
     
-                        <div class="form-group">
-                            <label for="pageTitle">Titre de la page</label>
-                            <input type="text" id="pageTitle" name="pageTitle" placeholder="Ex: Page 05 - La rencontre">
-                        </div>
+                            <div class="form-group">
+                                <label for="pageTitle">Titre de la page</label>
+                                <input type="text" id="pageTitle" name="pageTitle" placeholder="Ex: Page 05 - La rencontre">
+                            </div>
     
-                        <div class="form-group file-area">
-                            <label for="pageFile">Fichier image</label>
-                            <input type="file" id="pageFile" name="pageFile" accept="image/png, image/jpeg, image/webp" required>
-                            <button type="submit" class="btn btn-accent">Uploader la Page</button>
+                            <div class="form-group file-area">
+                                <label for="pageFile">Fichier image</label>
+                                <input type="file" id="pageFile" name="pageFile" accept="image/png, image/jpeg, image/webp" required>
+                                <button type="submit" class="btn btn-accent">Uploader la Page</button>
                         </form>
+                    </div>
                 </section>
-            </div>
         </main>
 </body>
 </html>
