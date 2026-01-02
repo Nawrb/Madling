@@ -235,6 +235,13 @@ main {
     transform: translate(2px, 2px);
 }
 
+.admin-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 50px; 
+}
+
 .btn-chap {
     background-color: #5dcefa;
     color: #000;
