@@ -35,12 +35,11 @@
             <a href="admin.html" class="active">Admin</a>
         </nav>
     </header>
-
-        <div class="admin-container">
-            <div class="admin-header-title"> <h1>Webcomic Admin Zone</h1>
-                <p>Gère tes planches et tes chapitres</p>
-            </div>
     
+        <div class="admin-header-title"> <h1>Webcomic Admin Zone</h1>
+            <p>Gère tes planches et tes chapitres</p>
+        </div>
+        <div class="admin-container">
             <main class="dashboard-grid">
             <div class="content-box">
                 <section class="card chapter-card">
@@ -52,8 +51,10 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Créer le Chapitre</button>
                     </form>
+            </div>
                 </section>
-    
+
+            <div class="admin-container">
                 <section class="card page-card">
                     <h2><span class="icon">🎨</span> Nouvelle Planche</h2>
                     <form action="/ajouter-page" method="POST" enctype="multipart/form-data">
@@ -79,9 +80,7 @@
                         </form>
                      </div>
                 </section>
-    
-            </main>
-        </div>
-
+            </div>
+        </main>
 </body>
 </html>
