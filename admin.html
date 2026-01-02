@@ -36,13 +36,12 @@
         </nav>
     </header>
 
-    <div class="admin-container">
-        
-        <div class="admin-header-title"> <h1>Webcomic Admin Zone</h1>
-            <p>Gère tes planches et tes chapitres</p>
-        </div>
-
-        <main class="dashboard-grid">
+        <div class="admin-container">
+            <div class="admin-header-title"> <h1>Webcomic Admin Zone</h1>
+                <p>Gère tes planches et tes chapitres</p>
+            </div>
+    
+            <main class="dashboard-grid">
             <div class="content-box">
                 <section class="card chapter-card">
                     <h2><span class="icon">📚</span> Nouveau Chapitre</h2>
@@ -53,11 +52,9 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Créer le Chapitre</button>
                     </form>
-            </div>
-            </section>
-
-            <section class="card page-card">
-                 <div class="content-box">
+                </section>
+    
+                <section class="card page-card">
                     <h2><span class="icon">🎨</span> Nouvelle Planche</h2>
                     <form action="/ajouter-page" method="POST" enctype="multipart/form-data">
                         
@@ -78,15 +75,13 @@
                         <div class="form-group file-area">
                             <label for="pageFile">Fichier image</label>
                             <input type="file" id="pageFile" name="pageFile" accept="image/png, image/jpeg, image/webp" required>
-                        </div>
+                            <button type="submit" class="btn btn-accent">Uploader la Page</button>
+                        </form>
+                     </div>
+                </section>
     
-                        <button type="submit" class="btn btn-accent">Uploader la Page</button>
-                    </form>
-                 </div>
-            </section>
-
-        </main>
-    </div>
+            </main>
+        </div>
 
 </body>
 </html>
