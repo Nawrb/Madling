@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone administrateur</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Creepster&family=Permanent+Marker&family=Bangers&display=swap" rel="stylesheet">
+</head>
+  
+</head>
+<body>
+    <header>
+        <div class="social-media-icons">
+            <a class="social-icon-round" href="https://junkred.carrd.co/" target="_blank">
+                <img src="assets/images/logo-cards.png" alt="Carrd">
+            </a>
+        </div>
 
+        <div class="logo-container">
+            <a class="back-to-main" href="./index.html">
+                <img src="assets/images/Madling_Logo.png" alt="Logo MADLING" class="logo-image">
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <a href="assets/pages/about.html">About</a>
+            <a href="assets/pages/archives.html">Archive</a>
+            <a href="assets/pages/characters.html">Characters</a>
+            <a href="assets/pages/extras.html">Extras</a>
+            <a href="assets/pages/links.html">Links</a>
+            <a href="assets/pages/links.html">Admin</a>
+        </nav>
+    </header>
+</body>
+<body>
+
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Webcomic Admin Zone</h1>
+            <p>Gère tes planches et tes chapitres</p>
+        </header>
+
+        <main class="dashboard-grid">
+            
+            <section class="card chapter-card">
+                <h2><span class="icon">📚</span> Nouveau Chapitre</h2>
+                <form action="/ajouter-chapitre" method="POST">
+                    <div class="form-group">
+                        <label for="chapterName">Nom du Chapitre</label>
+                        <input type="text" id="chapterName" name="chapterName" placeholder="Ex: Chapitre 1 - Le commencement" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Créer le Chapitre</button>
+                </form>
+            </section>
+
+            <section class="card page-card">
+                <h2><span class="icon">🎨</span> Nouvelle Planche</h2>
+                <form action="/ajouter-page" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-group">
+                        <label for="chapterSelect">Choisir le Chapitre</label>
+                        <select id="chapterSelect" name="chapterId" required>
+                            <option value="" disabled selected>-- Sélectionner --</option>
+                            <option value="1">Chapitre 1</option>
+                            <option value="2">Chapitre 2</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pageTitle">Titre de la page</label>
+                        <input type="text" id="pageTitle" name="pageTitle" placeholder="Ex: Page 05 - La rencontre">
+                    </div>
+
+                    <div class="form-group file-area">
+                        <label for="pageFile">Fichier image</label>
+                        <input type="file" id="pageFile" name="pageFile" accept="image/png, image/jpeg, image/webp" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent">Uploader la Page</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
