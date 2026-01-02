@@ -189,103 +189,70 @@ main {
 }
 
 /* --- Barre d'outils Admin --- */
-/* --- Barre d'outils Admin --- */
 .admin-toolbar {
     width: 100%;
     max-width: 600px;
-    margin: 50px auto; /* Centré avec marge */
-    padding: 30px;
-    
-    /* On reprend le style du content-box pour la cohérence */
+    margin: 40px 0;
+    padding: 20px;
     background-color: #000;
-    border: 3px solid #333;
-    border-radius: 12px; /* Un peu plus arrondi */
-    
-    /* Lueur mystique violette au lieu des pointillés */
-    box-shadow: 0 0 20px rgba(160, 100, 255, 0.2); 
+    border: 2px dashed #333;
+    border-radius: 10px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Petit effet décoratif (optionnel : une barre colorée en haut) */
-.admin-toolbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #5dcefa, #ff69b4);
 }
 
 .admin-toolbar h3 {
-    color: #e0b0ff; /* Violet clair au lieu de gris */
-    font-family: 'Uncial Antiqua', cursive; /* Police plus "Fantasy" que Bangers */
-    font-size: 2rem;
-    margin-bottom: 25px;
-    text-shadow: 0 0 10px rgba(224, 176, 255, 0.5);
+    color: #888;
+    font-family: 'Bangers', cursive;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
 .button-group {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .btn-admin {
-    padding: 12px 25px;
+    padding: 10px 20px;
     font-family: 'Permanent Marker', cursive;
-    font-size: 1.3rem;
-    border: 2px solid transparent; /* Prépare la bordure */
-    border-radius: 5px;
+    font-size: 1.2rem;
+    border: none;
     cursor: pointer;
     color: #fff;
-    
-    /* On garde la rotation légère, c'est le style du site */
     transform: rotate(-2deg);
-    
-    /* Transition fluide pour le hover */
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
-    /* Suppression de l'ombre blanche dure, ajout d'une ombre noire pour la lisibilité */
-    text-shadow: 2px 2px 0 #000;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Style spécifique Bouton Chapitre (Bleu Néon) */
-.btn-chap {
-    background-color: transparent;
-    border-color: #5dcefa;
-    color: #5dcefa;
-    box-shadow: 0 0 10px rgba(93, 206, 250, 0.2), inset 0 0 10px rgba(93, 206, 250, 0.1);
-}
-
-/* Style spécifique Bouton Page (Rose Néon) */
-.btn-page {
-    background-color: transparent;
-    border-color: #ff69b4;
-    color: #ff69b4;
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.2), inset 0 0 10px rgba(255, 105, 180, 0.1);
-}
-
-/* Effet au survol (Hover) commun */
 .btn-admin:hover {
     transform: rotate(0deg) scale(1.1);
-    background-color: #fff; /* Le fond devient blanc */
-    color: #000; /* Le texte devient noir */
-    text-shadow: none;
-    border-color: #fff;
-    
-    /* Lueur intense au survol */
-    box-shadow: 0 0 25px currentColor; 
+    z-index: 5;
 }
 
-/* Petite distinction au clic */
 .btn-admin:active {
-    transform: scale(0.95);
+    box-shadow: 2px 2px 0 #fff;
+    transform: translate(2px, 2px);
 }
 
+.admin-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 50px; 
+}
+
+.btn-chap {
+    background-color: #5dcefa;
+    color: #000;
+    box-shadow: 4px 4px 0 #fff;
+}
+
+.btn-page {
+    background-color: #ff69b4;
+    color: #000;
+    box-shadow: 4px 4px 0 #fff;
+}
 
 
 :root {
