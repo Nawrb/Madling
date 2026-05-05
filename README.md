@@ -9,7 +9,7 @@ Les visiteurs peuvent créer un compte et se connecter via email/mot de passe ou
 
 ## Détail technique
 
-Tout d'abord, pour la gestion de projet nous avons utilisé un trello pour la gestion du projet, pour remettre en forme la liste des tâches à faire. Le client nous à aussi fourni des maquettes qu'il a pu faire pour nous orienter dans le style que devait avoir le site.
+Tout d'abord, pour la gestion de projet nous avons utilisé Taiga (https://tree.taiga.io/project/nawrb-madling-comic/taskboard/madling-remake je l'ai refait pour l'epreuve car le sprint à été automatiquement supprimer) pour la gestion du projet, pour remettre en forme la liste des tâches à faire. Le client nous à aussi fourni des maquettes qu'il a pu faire pour nous orienter dans le style que devait avoir le site.
 
 Le projet est développé en PHP 8 orienté objet, sans framework, en suivant un pattern Repository / Controller. La logique métier est séparée en classes dédiées : AuthService pour l'authentification, SessionManager pour la gestion des sessions, et trois repositories (ChapitreRepository, PageRepository, CommentaireRepository) pour l'accès aux données. Le ComicController orchestre la logique du lecteur et agrège les données avant de les passer à la vue.
 
