@@ -1,28 +1,51 @@
-## Bienvenu sur le ReadMe du site web Madling
+Madling
+Bienvenue sur le dépôt du projet Madling. Il s'agit d'une plateforme web développée en PHP, HTML, CSS avec une base de données MySQL (hébergée sur OVH).
 
-Madling est un site web développé en PHP, HTML, CSS avec une base de donnée MySQL qui est hébergée sur OVH. Pour directemment démarrer le projet, rendez-vous dans la séction démarrer.
+Pour lancer l'application immédiatement en environnement local, veuillez vous rendre directement à la section Démarrer le projet.
 
-## Fonctionnalités
+Fonctionnalités
+Lecteur de comic interactif : Interface complète incluant une navigation page par page au sein d'un chapitre, des sélecteurs de chapitres et de pages, ainsi que le préchargement de l'image suivante pour garantir une lecture fluide.
 
-Le site propose un lecteur de comic complet : navigation page par page au sein d'un chapitre, sélecteurs de chapitre et de page, et préchargement de l'image suivante pour fluidifier la lecture. Une page Archive recense l'intégralité des chapitres sous forme d'accordéons dépliables, avec des miniatures chargées en lazy loading. Les pages Characters et Extra présentent respectivement les fiches personnages et les contenus bonus ou fanarts soumis par la communauté.
-Les visiteurs peuvent créer un compte et se connecter via email/mot de passe ou via Google OAuth. Une fois connectés, ils peuvent poster des commentaires sur chaque page du comic et y répondre en fils de discussion. Un système de réinitialisation de mot de passe par token est également disponible.
+Archives : Consultation de l'intégralité des chapitres sous forme d'accordéons dépliables. Les miniatures sont optimisées via un chargement différé (lazy loading).
 
-## Détail technique
+Personnages et Extras : Pages dédiées aux fiches descriptives des personnages et aux contenus bonus (ex. fanarts soumis par la communauté).
 
-Tout d'abord, pour la gestion de projet nous avons utilisé Taiga (https://tree.taiga.io/project/nawrb-madling-comic/taskboard/madling-remake je l'ai refait pour l'epreuve car le sprint à été automatiquement supprimer) pour la gestion du projet, pour remettre en forme la liste des tâches à faire. Le client nous à aussi fourni des maquettes qu'il a pu faire pour nous orienter dans le style que devait avoir le site.
+Authentification et Comptes : Inscription et connexion par email/mot de passe classique ou via Google OAuth. Intégration d'un système de réinitialisation de mot de passe sécurisé par token.
 
-Le projet est développé en PHP 8 orienté objet, sans framework, en suivant un pattern Repository / Controller. La logique métier est séparée en classes dédiées : AuthService pour l'authentification, SessionManager pour la gestion des sessions, et trois repositories (ChapitreRepository, PageRepository, CommentaireRepository) pour l'accès aux données. Le ComicController orchestre la logique du lecteur et agrège les données avant de les passer à la vue.
+Espace de discussion : Possibilité pour les utilisateurs connectés de publier des commentaires sur chaque page du comic et de répondre via un système de fils de discussion.
 
-La base de données est MySQL, interrogée exclusivement via PDO avec requêtes préparées, ce qui élimine les risques d'injection SQL. Les mots de passe sont hashés avec password_hash() et vérifiés avec password_verify(). Chaque formulaire POST est protégé par un token CSRF généré et validé côté serveur. Les cookies de session sont configurés en HttpOnly, SameSite: Lax, et passent automatiquement en mode Secure lorsque HTTPS est détecté — compatible avec les reverse proxies (OVH, Cloudflare).
+Détails Techniques
+Architecture et Développement
+Le projet est développé en PHP 8 orienté objet, sans recours à un framework externe, en respectant le design pattern Repository / Controller. La logique métier est rigoureusement segmentée :
 
-Le frontend est en HTML / CSS / JavaScript, sans framework. La navigation mobile est gérée par un menu burger. Les images uploadées (pages, personnages, extras) sont stockées dans assets/uploads/ et servies directement par le serveur web.
+Services : AuthService pour l'authentification et SessionManager pour le contrôle des sessions.
 
-## Démarrer le projet 
+Repositories : Accès aux données géré par ChapitreRepository, PageRepository, et CommentaireRepository.
 
-Comme vous avez pu le voir, un utilisateur professeur a été crée, suite à la connexion vous pouvez directement ouvrir Wamp Server (il faudra renseigner votre mot de passe) pour ouvrir la base de donnée puis accéder au projet en localhost.
+Controllers : Le ComicController centralise la logique du lecteur et prépare les données pour la vue.
 
-Suite à l'ouverture de Wamp Server, vous pourrez ouvrir Visual Studio code. Normalement le dossier Epreuve_madling_site est déjà ouvert, cependant, si il ne l'est pas je vous invite à l'ouvrir depuis Visual Studio Code avec le chemin suivant: C:\wamp64\www\epreuve_madling_site
+Le front-end est conçu en HTML, CSS et JavaScript natifs. La navigation est pensée pour être responsive, incluant un menu burger pour les interfaces mobiles. Les fichiers médias téléchargés sont stockés dans le répertoire assets/uploads/ et directement servis par le serveur.
 
-Vous pouvez maintenant cliquer sur l'onglet ouvrir les icônes cachées en bas a droite de l'écran, cliquer sur Wamp Server, localhost et ouvrir le projet madling.
+Sécurité et Base de Données
+Base de données MySQL : Les requêtes sont exécutées exclusivement via PDO en utilisant des requêtes préparées, écartant ainsi les risques d'injections SQL.
 
-note: si vous voulez accéder à la BD, il faudra cliquer sur les icônes cachées en bas a droite de l'écran, cliquer sur Wamp Server, Gestion bases de données et enfin phpmyadmin. l'utilisateur est root, laisser le mot de passe vide et connecter vous. 
+Gestion des mots de passe : Hachage systématique des mots de passe avec password_hash() et vérification via password_verify().
+
+Protection des formulaires : Génération et validation de tokens CSRF côté serveur pour toute requête POST.
+
+Sécurité des sessions : Les cookies de session sont configurés avec les attributs HttpOnly et SameSite: Lax. Ils basculent automatiquement en mode Secure lorsqu'une connexion HTTPS est détectée (assurant la compatibilité avec des reverse proxies comme OVH ou Cloudflare).
+
+Gestion de projet
+Le suivi de projet a été réalisé sur Taiga (le sprint a été recréé spécifiquement pour l'épreuve). Le développement visuel s'est appuyé sur des maquettes fournies par le client pour définir l'orientation stylistique du site.
+
+Démarrer le projet
+Cet environnement a été spécifiquement préparé pour l'évaluation. Un compte utilisateur "professeur" a déjà été créé.
+
+Initialisation du serveur : Lancez l'application WampServer sur votre machine (renseignez votre mot de passe système si une autorisation est demandée) pour démarrer les services web et la base de données.
+
+Ouverture du code source : Ouvrez Visual Studio Code. Le dossier du projet devrait s'ouvrir par défaut. Dans le cas contraire, veuillez ouvrir le dossier situé au chemin suivant : C:\wamp64\www\epreuve_madling_site.
+
+Accès au site : Dans la zone de notification de votre barre des tâches (en bas à droite), cliquez sur l'icône WampServer, sélectionnez Localhost, puis cliquez sur le projet madling pour l'afficher dans votre navigateur.
+
+Note concernant la base de données :
+Si vous souhaitez inspecter la base de données, cliquez sur l'icône WampServer dans la zone de notification, puis allez dans phpMyAdmin. Utilisez l'identifiant root, laissez le champ du mot de passe vide, et connectez-vous.
