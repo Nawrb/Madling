@@ -6,6 +6,10 @@ Madling est un site web développé en PHP, HTML, CSS avec une base de donnée M
 
 ## Détail technique
 
+Tout d'abord, pour la gestion de projet nous avons utilisé un trello pour la gestion du projet, pour remettre en forme la liste des tâches à faire. Le client nous à aussi fourni des maquettes qu'il a pu faire pour nous orienter dans le style que devait avoir le site.
+
+
+
 ## Démarrer le projet 
 
 Comme vous avez pu le voir, un utilisateur professeur a été crée, suite à la connexion vous pouvez directement ouvrir Wamp Server (il faudra renseigner votre mot de passe) pour ouvrir la base de donnée puis accéder au projet en localhost.
