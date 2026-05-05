@@ -4,11 +4,18 @@ Madling est un site web développé en PHP, HTML, CSS avec une base de donnée M
 
 ## Fonctionnalités
 
+Le site propose un lecteur de comic complet : navigation page par page au sein d'un chapitre, sélecteurs de chapitre et de page, et préchargement de l'image suivante pour fluidifier la lecture. Une page Archive recense l'intégralité des chapitres sous forme d'accordéons dépliables, avec des miniatures chargées en lazy loading. Les pages Characters et Extra présentent respectivement les fiches personnages et les contenus bonus ou fanarts soumis par la communauté.
+Les visiteurs peuvent créer un compte et se connecter via email/mot de passe ou via Google OAuth. Une fois connectés, ils peuvent poster des commentaires sur chaque page du comic et y répondre en fils de discussion. Un système de réinitialisation de mot de passe par token est également disponible.
+
 ## Détail technique
 
 Tout d'abord, pour la gestion de projet nous avons utilisé un trello pour la gestion du projet, pour remettre en forme la liste des tâches à faire. Le client nous à aussi fourni des maquettes qu'il a pu faire pour nous orienter dans le style que devait avoir le site.
 
+Le projet est développé en PHP 8 orienté objet, sans framework, en suivant un pattern Repository / Controller. La logique métier est séparée en classes dédiées : AuthService pour l'authentification, SessionManager pour la gestion des sessions, et trois repositories (ChapitreRepository, PageRepository, CommentaireRepository) pour l'accès aux données. Le ComicController orchestre la logique du lecteur et agrège les données avant de les passer à la vue.
 
+La base de données est MySQL, interrogée exclusivement via PDO avec requêtes préparées, ce qui élimine les risques d'injection SQL. Les mots de passe sont hashés avec password_hash() et vérifiés avec password_verify(). Chaque formulaire POST est protégé par un token CSRF généré et validé côté serveur. Les cookies de session sont configurés en HttpOnly, SameSite: Lax, et passent automatiquement en mode Secure lorsque HTTPS est détecté — compatible avec les reverse proxies (OVH, Cloudflare).
+
+Le frontend est en HTML / CSS / JavaScript, sans framework. La navigation mobile est gérée par un menu burger. Les images uploadées (pages, personnages, extras) sont stockées dans assets/uploads/ et servies directement par le serveur web.
 
 ## Démarrer le projet 
 
