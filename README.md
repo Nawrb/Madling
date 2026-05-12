@@ -20,7 +20,7 @@ Le frontend est réalisé en HTML / CSS / JavaScript, sans framework. La navigat
 
 ## Démarrer le projet
 
-Comme vous avez pu le constater, un compte utilisateur "professeur" a été créé. Après la connexion, vous pouvez directement lancer WampServer (il faudra renseigner votre mot de passe) pour ouvrir la base de données, puis accéder au projet en localhost.
+Le projet doit être lancé sur le poste ST 202 avec le nom d'utilisateur: "nrharbaoui" et mot de passe "demander un reset"
 
 Une fois WampServer lancé, vous pourrez ouvrir Visual Studio Code. Le dossier `Epreuve_madling_site` devrait déjà être ouvert. Si ce n'est pas le cas, nous vous invitons à l'ouvrir manuellement via Visual Studio Code en suivant le chemin : `C:\wamp64\www\epreuve_madling_site`.
 
