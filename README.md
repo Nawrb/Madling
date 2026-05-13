@@ -1,29 +1,105 @@
-# Bienvenue sur le ReadMe du site web Madling
+# Madling — Lecteur de Comics en ligne
 
-Madling est un site web développé en PHP, HTML et CSS, s'appuyant sur une base de données MySQL hébergée chez OVH. Pour démarrer directement le projet, rendez-vous dans la section [Démarrer le projet](#démarrer-le-projet).
+> Site web de lecture de comics développé en PHP 8 orienté objet, sans framework, avec authentification, commentaires et gestion de contenu. Hébergé chez OVH sur base de données MySQL.
+
+---
+
+## Sommaire
+
+- [Fonctionnalités](#fonctionnalités)
+- [Architecture technique](#architecture-technique)
+- [Sécurité](#sécurité)
+- [Gestion de projet](#gestion-de-projet)
+- [Démarrer le projet](#démarrer-le-projet)
+
+---
 
 ## Fonctionnalités
 
-Le site propose un lecteur de comics complet : navigation page par page au sein d'un chapitre, sélecteurs de chapitre et de page, et préchargement de l'image suivante pour fluidifier la lecture. Une page Archive recense l'intégralité des chapitres sous forme d'accordéons dépliables, avec des miniatures chargées en "lazy loading". Les pages Characters et Extra présentent respectivement les fiches des personnages et les contenus bonus ou fanarts soumis par la communauté.
+**Lecteur de comics**
+- Navigation page par page au sein d'un chapitre
+- Sélecteurs de chapitre et de page
+- Préchargement de l'image suivante pour fluidifier la lecture
 
-Les visiteurs peuvent créer un compte et se connecter via e-mail/mot de passe ou via Google OAuth. Une fois connectés, ils peuvent poster des commentaires sur chaque page du comic et y répondre sous forme de fils de discussion. Un système de réinitialisation de mot de passe par token est également disponible.
+**Pages du site**
+- **Archive** : liste complète des chapitres en accordéons dépliables, miniatures en lazy loading
+- **Characters** : fiches descriptives des personnages
+- **Extra** : contenus bonus et fanarts soumis par la communauté
 
-## Détails techniques
+**Comptes utilisateurs**
+- Inscription et connexion par e-mail / mot de passe ou via Google OAuth
+- Réinitialisation de mot de passe par token
+- Commentaires par page avec fils de discussion imbriqués
 
-Pour la gestion de projet, nous avons utilisé [Taiga](https://tree.taiga.io/project/nawrb-madling-comic/taskboard/madling-remake). L'outil a été reconfiguré pour l'épreuve car le sprint précédent avait été automatiquement supprimé, permettant ainsi de remettre en forme la liste des tâches. Le client nous a également fourni des maquettes pour nous orienter sur l'identité visuelle du site.
+---
 
-Le projet est développé en PHP 8 orienté objet, sans framework, en suivant un pattern Repository / Controller. La logique métier est séparée en classes dédiées : `AuthService` pour l'authentification, `SessionManager` pour la gestion des sessions, et trois repositories (`ChapitreRepository`, `PageRepository`, `CommentaireRepository`) pour l'accès aux données. Le `ComicController` orchestre la logique du lecteur et agrège les données avant de les transmettre à la vue.
+## Architecture technique
 
-La base de données MySQL est interrogée exclusivement via PDO avec des requêtes préparées, éliminant ainsi les risques d'injection SQL. Les mots de passe sont hachés avec `password_hash()` et vérifiés avec `password_verify()`. Chaque formulaire POST est protégé par un token CSRF généré et validé côté serveur. Les cookies de session sont configurés en `HttpOnly`, `SameSite: Lax`, et passent automatiquement en mode `Secure` lorsque le protocole HTTPS est détecté (compatible avec les reverse proxies comme OVH ou Cloudflare).
+| Composant | Détail |
+|-----------|--------|
+| **Langage** | PHP 8 orienté objet, sans framework |
+| **Pattern** | Repository / Controller |
+| **Base de données** | MySQL via PDO (requêtes préparées) |
+| **Frontend** | HTML / CSS / JavaScript natif |
+| **Hébergement** | OVH |
 
-Le frontend est réalisé en HTML / CSS / JavaScript, sans framework. La navigation mobile est gérée par un menu burger. Les images téléchargées (pages, personnages, extras) sont stockées dans le dossier `assets/uploads/` et servies directement par le serveur web.
+**Structure des classes principales :**
+
+```
+AuthService              — Gestion de l'authentification
+SessionManager           — Gestion des sessions utilisateur
+ChapitreRepository       — Accès aux données des chapitres
+PageRepository           — Accès aux données des pages
+CommentaireRepository    — Accès aux données des commentaires
+ComicController          — Orchestration du lecteur, agrégation vers la vue
+```
+
+Les images uploadées (pages, personnages, extras) sont stockées dans `assets/uploads/` et servies directement par le serveur web. La navigation mobile est assurée par un menu burger.
+
+---
+
+## Sécurité
+
+- Requêtes PDO préparées — aucun risque d'injection SQL
+- Mots de passe hachés avec `password_hash()`, vérifiés avec `password_verify()`
+- Token CSRF généré et validé côté serveur sur chaque formulaire POST
+- Cookies de session en `HttpOnly`, `SameSite: Lax`, passage automatique en `Secure` si HTTPS détecté (compatible reverse proxies OVH / Cloudflare)
+
+---
+
+## Gestion de projet
+
+Le projet a été suivi via [Taiga](https://tree.taiga.io/project/nawrb-madling-comic/taskboard/madling-remake). L'outil a été reconfiguré pour l'épreuve (le sprint précédent avait été automatiquement supprimé). Des maquettes fournies par le client ont guidé l'identité visuelle du site.
+
+---
 
 ## Démarrer le projet
 
-Le projet doit être lancé sur le poste ST 202 avec le nom d'utilisateur: "nrharbaoui" et mot de passe "demander un reset"
+> Le projet doit être lancé sur le poste **ST 202**.
+>
+> Identifiants de session : utilisateur `nrharbaoui` — mot de passe : demander un reset.
 
-Une fois WampServer lancé, vous pourrez ouvrir Visual Studio Code. Le dossier `Epreuve_madling_site` devrait déjà être ouvert. Si ce n'est pas le cas, nous vous invitons à l'ouvrir manuellement via Visual Studio Code en suivant le chemin : `C:\wamp64\www\epreuve_madling_site`.
+**1. Lancer WampServer**
 
-Vous pouvez maintenant cliquer sur l'onglet "Afficher les icônes cachées" en bas à droite de l'écran, cliquer sur l'icône WampServer, puis sur "Localhost" pour ouvrir le projet Madling.
+Démarrer WampServer sur le poste. Une fois actif, ouvrir Visual Studio Code.
 
-**Note :** Si vous souhaitez accéder à la base de données, cliquez sur les icônes cachées en bas à droite de l'écran, sélectionnez WampServer, puis "Gestion bases de données" et enfin "phpMyAdmin". L'utilisateur est `root`, laissez le champ mot de passe vide et connectez-vous.
+**2. Ouvrir le dossier projet**
+
+Le dossier `Epreuve_madling_site` devrait déjà être ouvert dans VS Code. Sinon, l'ouvrir manuellement via :
+
+```
+C:\wamp64\www\epreuve_madling_site
+```
+
+**3. Accéder au site**
+
+Cliquer sur "Afficher les icônes cachées" en bas à droite de la barre des tâches → icône WampServer → **Localhost**.
+
+**4. Accéder à la base de données (optionnel)**
+
+Icônes cachées → WampServer → Gestion bases de données → **phpMyAdmin**
+
+```
+Utilisateur : root
+Mot de passe : usersio
+```
