@@ -77,7 +77,7 @@ Le projet a été suivi via [Taiga](https://tree.taiga.io/project/nawrb-madling-
 
 > Le projet doit être lancé sur le poste **ST 202**.
 >
-> Identifiants de session : utilisateur `nrharbaoui` — mot de passe : demander un reset.
+> Identifiants de session : utilisateur `.\usersio` — mot de passe : `usersio`.
 
 **1. Lancer WampServer**
 
@@ -94,6 +94,8 @@ C:\wamp64\www\epreuve_madling_site
 **3. Accéder au site**
 
 Cliquer sur "Afficher les icônes cachées" en bas à droite de la barre des tâches → icône WampServer → **Localhost**.
+
+Utilisateur du site `usersio` mot de passe `Usersio1/`
 
 **4. Accéder à la base de données (optionnel)**
 
